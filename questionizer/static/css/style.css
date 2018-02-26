@@ -1,0 +1,34 @@
+body {
+  padding-left: 15px;
+}
+
+#nav-ask > form, #nav-search > form {
+    margin-bottom: 0;
+}
+
+#nav-avatar {
+    margin-right: 10px;
+}
+body {
+    padding-top:110px;
+}
+
+#popular_tags {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+#popular_tags > a {
+    margin : 0px 15px 15px 15px;
+}
+
+#best_users_names {
+    display:flex;
+    flex-direction: column;
+    font-size: 15px;
+}
+#best_users_names > a {
+    margin: 7px 0px 7px 15px;
+}

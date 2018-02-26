@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <script type="text/javascript" src="{% static 'jquery-3.1.1.js' %}"></script>
+    <script src="{% static 'Remodal-master/dist/remodal.min.js' %}"></script>
+    <script src="{% static 'js/js.js' %}"></script>
+    <body>
+        <header id="header" class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+            <div class="container">
+                <div class="col-2 navbar-brand">Questionizer</div>
+                <div id="nav-search" class="col-md-3 col-lg-5">
+                    <form action="#" method="get" class="form-inline form-search pull-right">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button type="submit" class="d-none btn btn-primary"></button>
+                    </form>
+                </div>
+                <div id ="nav-ask" class="col-2">
+                    <form action="#" method="get" class="form-inline form-search pull-right">
+                        <button type="submit" class="btn btn-primary">ASK QUESTION!</button>
+                    </form>
+                </div>
+                <div class="col-3">
+                    {% if not   authorized %}
+                        <img id="nav-avatar" height="40" width="40" class="float-left" src="media/no_avatar.png">
+                        <div class="user_name">Ivan Ivanovich</div>
+                        <div class="user_menu">
+                            <a href="{% url 'login_url' %}" class="settings">Settings</a>&nbsp;&nbsp;&nbsp;
+                            <a href="{% url 'signup_url' %}" class="logout">Log out</a>
+                        </div>
+                    {% else %}
+                        <div class="user_block">
+                            <div class="user_name">You watch this page as a guest</div>
+                            <div class="user_menu">
+                                <a href="{% url 'login_url' %}" class="login">Log in</a>/
+                                <a href="{% url 'signup_url' %}" class="register">Sign up</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div class="row">
+                <section class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+                </section>
+                <aside class="col-md-4">
+                    <div id="popular">
+                        <h2 id="popular_label">
+                            Popular Tags:
+                        </h2>
+                        <div id="popular_tags">
+                            <a href="#">PHP</a>
+                            <a href="#">Python</a>
+                            <a href="#">JavaScript</a>
+                            <a href="#">GO</a>
+                            <a href="#">RUBY</a>
+                        </div>
+                    </div>
+                    <div id="best_users">
+                        <h2 id="best_users_label">
+                            Best Members:
+                        </h2>
+                        <div id="best_users_names">
+                            <a href="#">Mr. Freeman</a>
+                            <a href="#">Dr. House</a>
+                            <a href="#">Bender</a>
+                            <a href="#">V. Pupkin</a>
+                            <a href="#">Sveta114</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </body>
+</html>
