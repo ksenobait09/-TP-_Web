@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'fontawesome/web-fonts-with-css/css/fontawesome-all.css' %}">
     </head>
     <script type="text/javascript" src="{% static 'jquery-3.1.1.js' %}"></script>
     <script src="{% static 'Remodal-master/dist/remodal.min.js' %}"></script>
@@ -18,12 +19,14 @@
                     </form>
                 </div>
                 <div id ="nav-ask" class="col-2">
-                    <form action="#" method="get" class="form-inline form-search pull-right">
-                        <button type="submit" class="btn btn-primary">ASK QUESTION!</button>
-                    </form>
+                    {% if authorized %}
+                        <form action="#" method="get" class="form-inline form-search pull-right">
+                            <button type="submit" class="btn btn-primary">ASK QUESTION!</button>
+                        </form>
+                    {%  endif %}
                 </div>
                 <div class="col-3">
-                    {% if not   authorized %}
+                    {% if authorized %}
                         <img id="nav-avatar" height="40" width="40" class="float-left" src="media/no_avatar.png">
                         <div class="user_name">Ivan Ivanovich</div>
                         <div class="user_menu">
