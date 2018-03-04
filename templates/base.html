@@ -19,7 +19,7 @@
                     </form>
                 </div>
                 <div id ="nav-ask" class="col-2">
-                    {% if authorized %}
+                    {% if not authorized %}
                         <form action="#" method="get" class="form-inline form-search pull-right">
                             <button type="submit" class="btn btn-primary">ASK QUESTION!</button>
                         </form>
@@ -47,11 +47,11 @@
         </header>
         <div class="container">
             <div class="row">
-                <section class="col-md-8">
+                <section class="col-md-9">
                     {% block content %}
                     {% endblock %}
                 </section>
-                <aside class="col-md-4">
+                <aside class="col-md-3">
                     <div id="popular">
                         <h2 id="popular_label">
                             Popular Tags:
