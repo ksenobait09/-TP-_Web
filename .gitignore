@@ -2,6 +2,7 @@
 /dinner/*
 /data
 /data/*
+/media
 /static
 /static/*
 /carlson/config.php
