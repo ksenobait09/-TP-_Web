@@ -14,15 +14,22 @@ class BaseView(View):
 
         return render(request, template, context)
 
+
 class MainPage(BaseView):
     def get(self, request):
         #books = Book.objects.all()
         return super().render(request, 'index.html', {})
 
+
+class Question(BaseView):
+    def get(self, request):
+        return super().render(request, 'question.html', {})
+
 class RegView(BaseView):
     def get(self, request):
         #books = Book.objects.all()
         return super().render(request, 'index.html', {})
+
 
 class LogView(BaseView):
     def get(self, request):
