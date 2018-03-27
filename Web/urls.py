@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.MainPage.as_view(), name='main_page'),
     path('question', views.Question.as_view(), name='question'),
-    path('signup', views.RegView.as_view(), name='signup_url'),
-    path('login', views.LogView.as_view(), name='login_url'),
+    path('signup', views.SignUp.as_view(), name='signup_url'),
+    path('login', views.Login.as_view(), name='login_url'),
+    path('ask', views.Ask.as_view(), name="ask")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

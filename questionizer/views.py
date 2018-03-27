@@ -25,13 +25,17 @@ class Question(BaseView):
     def get(self, request):
         return super().render(request, 'question.html', {})
 
-class RegView(BaseView):
+
+class Ask(BaseView):
     def get(self, request):
-        #books = Book.objects.all()
-        return super().render(request, 'index.html', {})
+        return super().render(request, 'ask.html', {})
 
 
-class LogView(BaseView):
+class Login(BaseView):
     def get(self, request):
-        #books = Book.objects.all()
-        return super().render(request, 'index.html', {})
+        return super().render(request, 'login.html', {})
+
+
+class SignUp(BaseView):
+    def get(self, request):
+        return super().render(request, 'signup.html', {})

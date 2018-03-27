@@ -1,33 +1,19 @@
 *~
-/dinner/*
+
 /data
 /data/*
 /media
 /static
 /static/*
-/carlson/config.php
-carlson/config.php
-inc/conf/config.ini.php
 !.gitignore
 .DS_Store
-.eljur-domain
-npm-debug.log
-www.pid
 
-/phpMyAdmin
-/pma
-
+*/__pycache__/
+*/__pycache__/*
 /.idea
 /.idea/*
-/.phpintel
-/.phpintel/*
-/.vscode
-/.vscode/*
 
-inc/app/journal/lib/Ext/WKPDF/tmp/*
-carlson/vendor/whatsapp/chat-api/src/wadata/*
-carlson/vendor/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/HTML/
-carlson/vendor/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/HTML/*
+
 
 /node_modules
 /node_modules/*
@@ -37,5 +23,3 @@ package-lock.json
 /build/node_modules/*
 /build/package-lock.json
 
-vendor/*
-composer.phar
