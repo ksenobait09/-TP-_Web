@@ -41,8 +41,8 @@ class Command(BaseCommand):
             up = Profile()
             up.user = u
 
-            image_url = 'http://api.adorable.io/avatars/100/%s.png' \
-                        % u.username
+            image_url = 'https://robohash.org/%s.png' \
+                        % u.id
             content = request.urlretrieve(image_url)
             up.avatar.save('%s.png' % u.username,
                            File(open(content[0], 'rb')), save=True)
